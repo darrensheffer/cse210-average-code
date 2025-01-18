@@ -40,5 +40,19 @@ class Program
             }
         }
         Console.WriteLine($"The max is {max}");
+
+        int min = numbers[0];
+
+        foreach(int number in numbers)
+        {
+            if (number < min)
+            {
+                if (number >= 0)
+                {
+                    min = number;
+                }
+            }
+        }
+        Console.WriteLine($"The smallest positive number is: {min}");
     }
 }
