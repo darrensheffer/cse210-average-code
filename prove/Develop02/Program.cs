@@ -1,63 +1,48 @@
 using System;
-using System.ComponentModel;
 
+// Save functionality was split into "Add to File" and Overwrite
 class Program
 {
     static void Main(string[] args)
     {
-        int userInput = 0;
-        List<string> savedEntries = new List<string>();
+        Journal journal = new Journal();
+        int choice;
+
+        Console.WriteLine("Welcome to the journal program!");
 
         do
         {
-            Console.WriteLine("Wecome to your personal electronic journal!");
-            Console.WriteLine("Please select one of the following choices.");
-            Console.WriteLine("1. Write\n2. Display\n3. Load\n4. Save\n5. Quit");
-            Console.WriteLine("What would you like to do?" );
-            userInput = int.Parse(Console.ReadLine());
-            
-            if (userInput == 1)
+            Console.WriteLine("\nPlease select one of the following choices:");
+            Console.WriteLine("1. Write\n2. Display\n3. Load\n4. Overwrite\n5. Add to File\n6. Quit");
+            Console.Write("What would you like to do? ");
+            choice = int.Parse(Console.ReadLine());
+
+            if (choice == 1)
             {
-                Prompt prompt1 = new Prompt();
-                Console.WriteLine($"Your prompt is: {prompt1.Display()}");
-                string _userEntry = Console.ReadLine();
-                savedEntries.Add(_userEntry);
+                journal.AddEntry();
             }
-
-            else if (userInput == 2)
+            else if (choice == 2)
             {
-                Console.WriteLine("Answers entered:");
-                foreach (string _userEntry in savedEntries)
-                {
-                    Console.WriteLine(_userEntry);
-                }
-
+                journal.DisplayAll();
             }
-
-            else if (userInput == 3)
+            else if (choice == 3)
             {
-                Console.WriteLine("Print 3");
-
+                journal.LoadFile();
             }
-
-            else if (userInput == 4)
+            else if (choice == 4)
             {
-                Console.WriteLine("Print 4");
-
+                // Add to file
+                journal.Save();
             }
-
-            else if (userInput == 5)
+            else if (choice == 5)
+            {           
+                // Overwrite file     
+                journal.Save(true);
+            }
+            else if (choice == 6)
             {
-                Console.WriteLine("Print 5");
+                Console.WriteLine("Goodbye!");
             }
-
-            else
-            {
-                Console.WriteLine("Please enter a number between 1 and 5.");
-            }
-        
-        }while (userInput != 5);
-        
-        
+        } while (choice != 6);
     }
 }

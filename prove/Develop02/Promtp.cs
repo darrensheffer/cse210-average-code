@@ -1,23 +1,23 @@
-public class Prompt
+using System;
+
+public class Prompt()
 {
-    List<string> _randPrompts = new List<string>()
+    List<string> _prompts = new List<string>
     {
-        "How was your day?",
-        "Where did you go?",
-        "What was the most interesting thing that happened to you?", 
-        "What would you change is you could anything?",
-        "Did you meet anyone now today?"
+        "Who was the most interesting person I interacted with today?",
+        "What was the best part of my day?",
+        "How did I see the hand of the Lord in my life today?",
+        "What was the strongest emotion I felt today?",
+        "If I had one thing I could do over today, what would it be?"
     };
 
-    public string Display()
+
+    public string RandPrompt()
     {
-        Random random= new Random();
+        Random random = new Random();
+        int randInt = random.Next(5);
+        string _randPrompt = _prompts[randInt];
 
-        int randomIndex = random.Next(_randPrompts.Count);
-
-        string randomName = _randPrompts[randomIndex];
-
-        return (randomName);
+        return _randPrompt;
     }
-
 }
