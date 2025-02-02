@@ -2,20 +2,20 @@ using System;
 
 public class Journal()
 {
-    List<Entry> _entries= new List<Entry>();
+    List<Entry> _userEntries = new List<Entry>();
 
     public void AddEntry()
     {
         Entry entry = new Entry();
         entry.AssignNewAll();
 
-        _entries.Add(entry);
+        _userEntries.Add(entry);
     }
 
 
     public void DisplayAll()
     {
-        foreach (Entry entry in _entries)
+        foreach (Entry entry in _userEntries)
         {
             entry.Display();
         }
@@ -46,20 +46,18 @@ public class Journal()
 
             loadedEntries.Add(entry);
         }
-        _entries = loadedEntries;
+        _userEntries = loadedEntries;
     }
 
 
     public void Save(bool Overwrite = false)
-    // If dontOverwrite is true: Overwrites the contents of the specified file with the entries in _entries
-    // Otherwise: Appends the entries onto the file
     {
         Console.Write("Please enter the file name(ex: filname.txt): ");
         string fileName = Console.ReadLine();
 
         using (StreamWriter file = new StreamWriter(fileName, Overwrite))
         {
-            foreach (Entry entry in _entries)
+            foreach (Entry entry in _userEntries)
             {
                 file.WriteLine($"{entry.GetDate()}|{entry.GetPrompt()}|{entry.GetEntryText()}");
             }

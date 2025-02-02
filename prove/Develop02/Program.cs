@@ -6,43 +6,43 @@ class Program
     static void Main(string[] args)
     {
         Journal journal = new Journal();
-        int choice;
+        int userInput;
 
-        Console.WriteLine("Welcome to the journal program!");
+        Console.WriteLine("Welcome to your electronic journal program!");
 
         do
         {
-            Console.WriteLine("\nPlease select one of the following choices:");
+            Console.WriteLine("\nPlease select one of the following:");
             Console.WriteLine("1. Write\n2. Display\n3. Load\n4. Overwrite\n5. Add to File\n6. Quit");
             Console.Write("What would you like to do? ");
-            choice = int.Parse(Console.ReadLine());
+            userInput = int.Parse(Console.ReadLine());
 
-            if (choice == 1)
+            if (userInput == 1)
             {
                 journal.AddEntry();
             }
-            else if (choice == 2)
+            else if (userInput == 2)
             {
                 journal.DisplayAll();
             }
-            else if (choice == 3)
+            else if (userInput == 3)
             {
                 journal.LoadFile();
             }
-            else if (choice == 4)
+            else if (userInput == 4)
             {
                 // Add to file
                 journal.Save();
             }
-            else if (choice == 5)
+            else if (userInput == 5)
             {           
                 // Overwrite file     
                 journal.Save(true);
             }
-            else if (choice == 6)
+            else if (userInput == 6)
             {
                 Console.WriteLine("Goodbye!");
             }
-        } while (choice != 6);
+        } while (userInput != 6);
     }
 }
