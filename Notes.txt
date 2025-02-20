@@ -1,0 +1,43 @@
+2/8/25 - **Inherintance:
+
+    has a:  
+
+    is a:  Specialized class "is a" type of the Generalized class.
+            example:  A car "is a" motor vehicle.
+
+    A student       is a        person
+    Specialized:            Generalized:
+    
+    is derived from         the based class
+    is a sub class          is the super class
+    is the child class      is the parent class
+
+Generalized class
+class Cirle{
+
+    int _radius;
+
+
+    public int GetCircumference()
+    public int GetArea()
+}
+
+Specialized class of Generalized Class Circle
+class Cylinder
+{
+    _radius
+    _height
+
+    public int GetCircumference()   *Inherited
+    public int GetArea()            *Inherited
+    public int GetVolume()
+    public int GetSurfaceArea()
+}
+
+dotnet new console --use-program-main -o 
+
+Encapsulation:
+
+    private -
+
+    public - 
