@@ -6,6 +6,7 @@ class Program
     {
         BreathingActivity breathingActivity = new BreathingActivity();
         ReflectionActivity reflectionActivity = new ReflectionActivity();
+        ListingActivity listingActivity= new ListingActivity();
 
         int choice = 0;
         while(choice != 4)
@@ -31,7 +32,7 @@ class Program
 
             else if (choice == 3)
             {
-                break;
+                listingActivity.RunListingActivity();
             }
 
             else if (choice == 4)

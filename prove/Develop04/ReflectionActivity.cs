@@ -18,8 +18,9 @@ public class ReflectionActivity : Activity
         "What is your favorite thing about this expirence?"
     };
 
-    public ReflectionActivity() : base("Reflection", "This activity will help you reflect on times in your life" + 
-    "\n when you have shown strength and resilience. This will help you recognize the power" + 
+    public ReflectionActivity() : base("Reflection Activity", 
+    "This activity will help you reflect on times in your life when you have" + 
+    "\nshown strength and resilience. This will help you recognize the power" + 
     "\n you have and how you can use it in other aspects of your life.")
     {}
 
