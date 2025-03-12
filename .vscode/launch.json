@@ -4,6 +4,19 @@
     "configurations": [
 
         {
+            "name": "RoundCalculations Project",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-RoundCalculations",
+            "program": "${workspaceFolder}/sandbox/RoundCalculations/bin/Debug/net9.0/RoundCalculations.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/RoundCalculations",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+        
+        {
             "name": "Sandbox3 Project",
             "type": "coreclr",
             "request": "launch",

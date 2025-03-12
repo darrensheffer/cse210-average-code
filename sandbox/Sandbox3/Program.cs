@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Vehicle vehicle= new Vehicle(2, 0, "Mountain Bike");
+        
+        vehicle.DisplayVehicleInfo();
     }
 }
