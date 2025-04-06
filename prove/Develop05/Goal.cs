@@ -17,7 +17,6 @@ public abstract class Goal
     {
         string checkmark;
 
-        // Check box in string output if the goal is complete
         if (IsComplete())
         {checkmark = "X";}
         else
